@@ -31,7 +31,6 @@ response = client.request :get_products do
       end
       xml.soapenv(:Body) do |xml|
         xml.urn(:GetProductsRequest) do |xml|
-          xml.batchNumber(0)
         end
       end
     end
