@@ -1,19 +1,19 @@
 # -*- encoding: utf-8 -*-
 $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
-require 'powa-api/version'
+require 'powa_api/version'
 
 Gem::Specification.new do |s|
-  s.name        = "powa-api"
+  s.name        = "powa_api"
   s.version     = PowaApi::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = []
+  s.authors     = ["jzw"]
   s.email       = []
-  s.homepage    = "http://rubygems.org/gems/powa-api"
-  s.summary     = "TODO: Write a gem summary"
-  s.description = "TODO: Write a gem description"
+  s.homepage    = "http://rubygems.org/gems/powa_api"
+  s.summary     = "Implementation of the Powa API"
+  s.description = "Implementation of the Powa API"
 
   s.required_rubygems_version = ">= 1.3.6"
-  s.rubyforge_project         = "powa-api"
+  s.rubyforge_project         = "powa_api"
 
   s.add_development_dependency "bundler", ">= 1.0.0.rc.5"
 
