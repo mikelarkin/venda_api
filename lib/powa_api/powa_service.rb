@@ -7,6 +7,14 @@ module PowaApi
 
     protected
 
+    def self.base_url
+      if config.environment == "production"
+        "https://api.powa.com/ws/soap/v2/"
+      else
+        "https://api.sandbox.powa.com/ws/soap/v2/"
+      end
+    end
+
     def self.header_block(xml)
       xml.soapenv(:Header) do |xml|
         xml.urn(:Credentials) do |xml|
