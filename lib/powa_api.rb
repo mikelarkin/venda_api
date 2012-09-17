@@ -3,6 +3,7 @@ require 'powa_api/version'
 require 'powa_api/config'
 require 'powa_api/powa_service'
 require 'powa_api/product_service'
+require 'powa_api/order_service'
 
 module PowaApi
 

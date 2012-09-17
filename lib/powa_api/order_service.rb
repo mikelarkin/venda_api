@@ -1,5 +1,5 @@
 module PowaApi
-  class ProductService < PowaService
+  class OrderService < PowaService
 
     def self.find_updated_orders(from, to = nil)
 
@@ -12,7 +12,8 @@ module PowaApi
             header_block(xml)
 
             xml.soapenv(:Body) do |xml|
-              xml.urn(:GetUpdatedOrdersRequest) do |xml|
+              xml.urn(:FindUpdatedOrdersRequest) do |xml|
+                xml.updatedFrom "2008-10-31T15:07:38.6875000-05:00"
              end
             end
           end
