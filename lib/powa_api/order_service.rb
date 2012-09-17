@@ -1,7 +1,7 @@
 module PowaApi
   class OrderService < PowaService
 
-    def self.find_updated_orders(from, to = nil)
+    def self.find_updated_orders(updated_from, updated_to = nil)
 
       client = Savon.client wsdl
 
@@ -13,7 +13,8 @@ module PowaApi
 
             xml.soapenv(:Body) do |xml|
               xml.urn(:FindUpdatedOrdersRequest) do |xml|
-                xml.updatedFrom "2008-10-31T15:07:38.6875000-05:00"
+                xml.updatedFrom updated_from.strftime('%FT%T.000')
+                xml.updateTo updated_to.strftime('%FT%T.000') if updated_to
              end
             end
           end
