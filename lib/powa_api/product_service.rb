@@ -14,12 +14,9 @@ module PowaApi
       response = client.request :get_products do
         soap.xml do |xml|
           xml.soapenv(:Envelope, namespaces) do |xml|
-            xml.soapenv(:Header) do |xml|
-              xml.urn(:Credentials) do |xml|
-                xml.integrationSecurityKey("KEY-6b05827d-e9c4-4d86-9c45-92394dfadf62")
-                xml.websiteAuthorisationToken("TOKEN-03980096-5437-465a-8ce0-f6cd510c1f7a")
-              end
-            end
+
+            header_block(xml)
+
             xml.soapenv(:Body) do |xml|
               xml.urn(:GetProductsRequest) do |xml|
              end
@@ -36,6 +33,15 @@ module PowaApi
 
     def self.wsdl
       "https://api.sandbox.powa.com/ws/soap/v2/ProductService?wsdl"
+    end
+
+    def self.header_block(xml)
+      xml.soapenv(:Header) do |xml|
+        xml.urn(:Credentials) do |xml|
+          xml.integrationSecurityKey config.integration_security_key
+          xml.websiteAuthorisationToken config.website_authorisation_token
+        end
+      end
     end
 
   end

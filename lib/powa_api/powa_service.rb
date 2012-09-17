@@ -1,6 +1,10 @@
 module PowaApi
   class PowaService
 
+    def self.config
+      Config.default
+    end
+
     protected
 
     def self.namespaces
