@@ -7,6 +7,15 @@ module PowaApi
 
     protected
 
+    def self.header_block(xml)
+      xml.soapenv(:Header) do |xml|
+        xml.urn(:Credentials) do |xml|
+          xml.integrationSecurityKey config.integration_security_key
+          xml.websiteAuthorisationToken config.website_authorisation_token
+        end
+      end
+    end
+
     def self.namespaces
       {
         "xmlns:soapenv" => "http://schemas.xmlsoap.org/soap/envelope/",

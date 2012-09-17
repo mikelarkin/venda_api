@@ -35,14 +35,5 @@ module PowaApi
       "https://api.sandbox.powa.com/ws/soap/v2/ProductService?wsdl"
     end
 
-    def self.header_block(xml)
-      xml.soapenv(:Header) do |xml|
-        xml.urn(:Credentials) do |xml|
-          xml.integrationSecurityKey config.integration_security_key
-          xml.websiteAuthorisationToken config.website_authorisation_token
-        end
-      end
-    end
-
   end
 end
