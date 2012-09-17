@@ -3,7 +3,7 @@ module PowaApi
 
     protected
 
-    def namespaces
+    def self.namespaces
       {
         "xmlns:soapenv" => "http://schemas.xmlsoap.org/soap/envelope/",
         "xmlns:urn" => "urn:powa:api:PowaAPI"

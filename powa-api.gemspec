@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.files        = `git ls-files`.split("\n")
   s.executables  = `git ls-files`.split("\n").select{|f| f =~ /^bin/}
   s.require_path = 'lib'
-  s.add_dependency 'savon'
+  s.add_dependency 'savon', '>= 1.2.0'
 end

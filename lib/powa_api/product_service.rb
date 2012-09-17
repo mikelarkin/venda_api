@@ -8,7 +8,8 @@ module PowaApi
     end
 
     def self.get_products(type = nil)
-      client = Savon::Client.new wsdl
+
+      client = Savon.client wsdl
 
       response = client.request :get_products do
         soap.xml do |xml|
@@ -33,7 +34,7 @@ module PowaApi
 
     private
 
-    def wsdl
+    def self.wsdl
       "https://api.sandbox.powa.com/ws/soap/v2/ProductService?wsdl"
     end
 
