@@ -1,7 +1,7 @@
 module PowaApi
   class ProductService < PowaService
 
-    def self.get_published_products(publish_token, opts = {})
+    def self.get_published_products(publish_token, batch_number = nil)
       client = Savon.client wsdl
 
       response = client.request :get_published_products do
@@ -13,7 +13,7 @@ module PowaApi
             xml.soapenv(:Body) do |xml|
               xml.urn(:GetPublishedProductsRequest) do |xml|
                 xml.publishToken publish_token
-                xml.batchNumber opts[:batch_number] if opts[:batch_number]
+                xml.batchNumber batch_number if batch_number
              end
             end
           end
