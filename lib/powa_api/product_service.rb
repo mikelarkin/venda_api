@@ -24,7 +24,7 @@ module PowaApi
     def self.get_published_products_by_sku(sku_list)
     end
 
-    def self.get_products(type = nil)
+    def self.get_products(batch_number = nil)
 
       client = Savon.client wsdl
 
@@ -36,6 +36,7 @@ module PowaApi
 
             xml.soapenv(:Body) do |xml|
               xml.urn(:GetProductsRequest) do |xml|
+                xml.batchNumber batch_number if batch_number
              end
             end
           end
