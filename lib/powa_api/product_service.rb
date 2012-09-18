@@ -31,9 +31,13 @@ module PowaApi
             header_block(xml)
 
             xml.soapenv(:Body) do |xml|
-              xml.urn(:GetPublishedProductsBySkuRequest) do |xml|
-                xml.skuList skus.join(' ')
-             end
+              xml.urn(:GetProductsBySkuRequest) do |xml|
+                xml.skuList do |xml|
+                  skus.each do |sku|
+                    xml.sku sku
+                  end
+                end
+              end
             end
           end
         end
@@ -71,7 +75,11 @@ module PowaApi
 
             xml.soapenv(:Body) do |xml|
               xml.urn(:GetProductsBySkuRequest) do |xml|
-                xml.skuList skus.join(' ')
+                xml.skuList do |xml|
+                  skus.each do |sku|
+                    xml.sku sku
+                  end
+                end
              end
             end
           end
