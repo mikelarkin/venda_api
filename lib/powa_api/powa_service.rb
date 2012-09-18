@@ -5,7 +5,29 @@ module PowaApi
       Config.default
     end
 
+    def self.get_publish_info
+      client = Savon.client wsdl
+
+      response = client.request :get_publish_info do
+        soap.xml do |xml|
+          xml.soapenv(:Envelope, namespaces) do |xml|
+
+            header_block(xml)
+
+            xml.soapenv(:Body) do |xml|
+              xml.urn(:GetPublishInfoRequest) do |xml|
+             end
+            end
+          end
+        end
+      end
+    end
+
     protected
+
+    def self.wsdl
+      base_url + "PublishService?wsdl"
+    end
 
     def self.base_url
       if config.environment == "production"
