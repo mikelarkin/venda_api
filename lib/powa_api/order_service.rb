@@ -23,6 +23,27 @@ module PowaApi
 
     end
 
+    def self.get_order_details(order_number)
+
+      client = Savon.client wsdl
+
+      response = client.request :get_order_details do
+        soap.xml do |xml|
+          xml.soapenv(:Envelope, namespaces) do |xml|
+
+            header_block(xml)
+
+            xml.soapenv(:Body) do |xml|
+              xml.urn(:GetOrderDetailsRequest) do |xml|
+                xml.orderNumber order_number
+             end
+            end
+          end
+        end
+      end
+
+    end
+
     private
 
     def self.wsdl
