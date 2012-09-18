@@ -60,7 +60,23 @@ module PowaApi
       end
     end
 
-    def self.get_products_by_sku(sku_list)
+    def self.get_products_by_sku(*skus)
+      client = Savon.client wsdl
+
+      response = client.request :get_products_by_sku do
+        soap.xml do |xml|
+          xml.soapenv(:Envelope, namespaces) do |xml|
+
+            header_block(xml)
+
+            xml.soapenv(:Body) do |xml|
+              xml.urn(:GetProductsBySkuRequest) do |xml|
+                xml.skuList skus.join(' ')
+             end
+            end
+          end
+        end
+      end
     end
 
     private
