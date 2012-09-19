@@ -29,6 +29,7 @@ module PowaApi
 
       client = Savon.client wsdl
 
+      begin
       response = client.request :get_order_details do
         soap.xml do |xml|
           xml.soapenv(:Envelope, namespaces) do |xml|
@@ -42,6 +43,10 @@ module PowaApi
             end
           end
         end
+      end
+      rescue Savon::SOAP::Fault => e
+        return nil if e.message.include?("Order not found")
+        raise e.message
       end
 
       response.to_array(:get_order_details_response).first
