@@ -21,6 +21,8 @@ module PowaApi
         end
       end
 
+      [response.to_array(:find_updated_orders_response).first[:orders]].flatten.compact
+
     end
 
     def self.get_order_details(order_number)
@@ -41,6 +43,8 @@ module PowaApi
           end
         end
       end
+
+      response.to_array(:get_order_details_response).first
 
     end
 

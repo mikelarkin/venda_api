@@ -21,6 +21,8 @@ module PowaApi
           end
         end
       end
+
+      response.to_array(:get_publish_info_response).first
     end
 
     protected

@@ -19,6 +19,8 @@ module PowaApi
           end
         end
       end
+
+      [response.to_array(:get_published_products_response).first[:products]].flatten.compact
     end
 
     def self.get_published_products_by_sku(*skus)
@@ -42,6 +44,8 @@ module PowaApi
           end
         end
       end
+
+      [response.to_array(:get_products_by_sku_response).first[:product]].flatten.compact
     end
 
     def self.get_products(batch_number = nil)
@@ -62,6 +66,9 @@ module PowaApi
           end
         end
       end
+
+      [response.to_array(:get_products_response).first[:product]].flatten.compact
+
     end
 
     def self.get_products_by_sku(*skus)
@@ -85,6 +92,8 @@ module PowaApi
           end
         end
       end
+
+      [response.to_array(:get_products_by_sku_response).first[:product]].flatten.compact
     end
 
     private
