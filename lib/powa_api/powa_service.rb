@@ -1,10 +1,6 @@
 module PowaApi
   class PowaService
 
-    def self.config
-      Config.default
-    end
-
     def self.get_publish_info
       client = Savon.client wsdl
 
@@ -32,7 +28,7 @@ module PowaApi
     end
 
     def self.base_url
-      if config.environment == "production"
+      if ::PowaApi.config[:environment] == "production"
         "https://api.powa.com/ws/soap/v2/"
       else
         "https://api.sandbox.powa.com/ws/soap/v2/"
@@ -42,8 +38,8 @@ module PowaApi
     def self.header_block(xml)
       xml.soapenv(:Header) do |xml|
         xml.urn(:Credentials) do |xml|
-          xml.integrationSecurityKey config.integration_security_key
-          xml.websiteAuthorisationToken config.website_authorisation_token
+          xml.integrationSecurityKey ::PowaApi.config[:integration_security_key]
+          xml.websiteAuthorisationToken ::PowaApi.config[:website_authorisation_token]
         end
       end
     end
