@@ -8,7 +8,7 @@ Ruby interface to the POWA API
 Configuration
 -------------
 
-# Yaml example
+### Yaml example
 
 ```yaml
 environment: "sandbox"
@@ -21,10 +21,11 @@ Then
 PowaApi.configure_with("path/to/yaml/file")
 ```
 
-# Ruby example
+### Ruby example
 
 ```ruby
-PowaApi.configure(:environment => "sandbox", :integration_security_key => "KEY-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", :website_authorisation_token => "TOKEN-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX")
+PowaApi.configure(:environment => "sandbox", :integration_security_key => "KEY-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+ :website_authorisation_token => "TOKEN-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX")
 ```
 
 Usage
