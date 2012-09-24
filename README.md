@@ -17,6 +17,7 @@ website_authorisation_token: "TOKEN-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
 ```
 
 Then
+
 ```ruby
 PowaApi.configure_with("path/to/yaml/file")
 ```
@@ -32,5 +33,5 @@ Usage
 -------------
 
 ```ruby
-PowaApi::ProductService.get_products
+products = PowaApi::ProductService.get_products
 ```
