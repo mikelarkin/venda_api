@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["jzw", "mikelarkin"]
   s.email       = []
-  s.homepage    = "http://rubygems.org/gems/powa_api"
+  s.homepage    = "http://github.com/mikelarkin/powa_api"
   s.summary     = "Implementation of the Powa API"
   s.description = "Implementation of the Powa API"
 
