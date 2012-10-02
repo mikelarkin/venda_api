@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = "powa_api"
   s.version     = PowaApi::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["jzw"]
+  s.authors     = ["jzw", "mikelarkin"]
   s.email       = []
   s.homepage    = "http://rubygems.org/gems/powa_api"
   s.summary     = "Implementation of the Powa API"
