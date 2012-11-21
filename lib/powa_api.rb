@@ -1,4 +1,4 @@
-#require 'savon'
+require 'savon'
 require 'yaml'
 require 'powa_api/version'
 require 'powa_api/powa_service'
