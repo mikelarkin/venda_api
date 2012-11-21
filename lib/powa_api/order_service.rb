@@ -57,7 +57,9 @@ module PowaApi
     # and returns an array of the results
     def self.get_orders(start_date, end_date)
       orders = []
-      order_ids = OrderService.find_updated_orders(start_date, end_date)
+
+      # Grab the list of orders and extract the order numbers
+      order_ids = OrderService.find_updated_orders(start_date, end_date).map { |order| order[:order_number] }
 
       order_ids.each do |order_id|
         orders << OrderService.get_order_details(order_id)
