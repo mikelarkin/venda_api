@@ -14,7 +14,7 @@ module PowaApi
             xml.soapenv(:Body) do |xml|
               xml.urn(:FindUpdatedOrdersRequest) do |xml|
                 xml.updatedFrom updated_from.strftime('%FT%T.000')
-                xml.updateTo updated_to.strftime('%FT%T.000') if updated_to
+                xml.updatedTo updated_to.strftime('%FT%T.000') if updated_to
               end
             end
           end
