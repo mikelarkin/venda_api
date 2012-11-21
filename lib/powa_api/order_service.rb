@@ -55,7 +55,7 @@ module PowaApi
 
     # This method invokes find_updated_orders and then calls get_order_details for each order
     # and returns an array of the results
-    def self.get_orders(start_date, end_date)
+    def self.get_orders(start_date, end_date=nil)
       orders = []
 
       # Grab the list of orders and extract the order numbers
