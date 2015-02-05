@@ -1,9 +1,9 @@
-powa-api
+venda-api
 ========
 
-Ruby interface to the POWA API
+Ruby interface to the Venda API
 
-[http://developer.powa.com/guide](http://developer.powa.com/guide)
+[http://venda.com](http://venda.com)
 
 Configuration
 -------------
@@ -19,13 +19,13 @@ website_authorisation_token: "TOKEN-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
 Then
 
 ```ruby
-PowaApi.configure_with("path/to/yaml/file")
+VendaApi.configure_with("path/to/yaml/file")
 ```
 
 ### Ruby example
 
 ```ruby
-PowaApi.configure(:environment => "sandbox", :integration_security_key => "KEY-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+VendaApi.configure(:environment => "sandbox", :integration_security_key => "KEY-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
  :website_authorisation_token => "TOKEN-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX")
 ```
 
@@ -33,5 +33,5 @@ Usage
 -------------
 
 ```ruby
-products = PowaApi::ProductService.get_products
+products = VendaApi::ProductService.get_products
 ```

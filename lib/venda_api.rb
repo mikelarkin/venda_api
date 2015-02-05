@@ -1,11 +1,11 @@
 require 'savon'
 require 'yaml'
-require 'powa_api/version'
-require 'powa_api/powa_service'
-require 'powa_api/product_service'
-require 'powa_api/order_service'
+require 'venda_api/version'
+require 'venda_api/venda_service'
+require 'venda_api/product_service'
+require 'venda_api/order_service'
 
-module PowaApi
+module VendaApi
 
   extend self
 

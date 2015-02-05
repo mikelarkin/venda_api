@@ -1,19 +1,19 @@
 # -*- encoding: utf-8 -*-
 $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
-require 'powa_api/version'
+require 'venda_api/version'
 
 Gem::Specification.new do |s|
-  s.name        = "powa_api"
-  s.version     = PowaApi::VERSION
+  s.name        = "venda_api"
+  s.version     = VendaApi::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["jzw", "mikelarkin"]
+  s.authors     = ["mikelarkin"]
   s.email       = []
-  s.homepage    = "http://github.com/mikelarkin/powa_api"
-  s.summary     = "Implementation of the Powa API"
-  s.description = "Implementation of the Powa API"
+  s.homepage    = "http://github.com/mikelarkin/venda_api"
+  s.summary     = "Implementation of the Venda API"
+  s.description = "Implementation of the Venda API"
 
   s.required_rubygems_version = ">= 1.3.6"
-  s.rubyforge_project         = "powa_api"
+  s.rubyforge_project         = "venda_api"
 
   s.add_development_dependency "bundler", ">= 1.0.0.rc.5"
 

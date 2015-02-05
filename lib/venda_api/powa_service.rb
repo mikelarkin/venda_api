@@ -1,5 +1,5 @@
-module PowaApi
-  class PowaService
+module VendaApi
+  class VendaService
 
     def self.get_publish_info
       client = Savon.client wsdl
@@ -28,18 +28,18 @@ module PowaApi
     end
 
     def self.base_url
-      if ::PowaApi.config[:environment] == "production"
-        "https://api.powa.com/ws/soap/v2/"
+      if ::VendaApi.config[:environment] == "production"
+        "https://api.venda.com/ws/soap/v2/"
       else
-        "https://api.sandbox.powa.com/ws/soap/v2/"
+        "https://api.sandbox.venda.com/ws/soap/v2/"
       end
     end
 
     def self.header_block(xml)
       xml.soapenv(:Header) do |xml|
         xml.urn(:Credentials) do |xml|
-          xml.integrationSecurityKey ::PowaApi.config[:integration_security_key]
-          xml.websiteAuthorisationToken ::PowaApi.config[:website_authorisation_token]
+          xml.integrationSecurityKey ::VendaApi.config[:integration_security_key]
+          xml.websiteAuthorisationToken ::VendaApi.config[:website_authorisation_token]
         end
       end
     end
@@ -47,7 +47,7 @@ module PowaApi
     def self.namespaces
       {
         "xmlns:soapenv" => "http://schemas.xmlsoap.org/soap/envelope/",
-        "xmlns:urn" => "urn:powa:api:PowaAPI"
+        "xmlns:urn" => "urn:venda:api:VendaAPI"
       }
     end
   end

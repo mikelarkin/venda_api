@@ -1,5 +1,5 @@
-module PowaApi
-  class OrderService < PowaService
+module VendaApi
+  class OrderService < VendaService
 
     def self.find_updated_orders(updated_from, updated_to = nil)
 

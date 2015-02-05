@@ -1,3 +1,3 @@
-module PowaApi
+module VendaApi
   VERSION = "0.1.2"
 end

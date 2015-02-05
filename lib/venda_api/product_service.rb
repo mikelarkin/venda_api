@@ -1,5 +1,5 @@
-module PowaApi
-  class ProductService < PowaService
+module VendaApi
+  class ProductService < VendaService
 
     def self.get_published_products(publish_token, batch_number = nil)
       client = Savon.client wsdl
