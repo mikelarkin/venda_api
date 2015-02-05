@@ -10,9 +10,9 @@ module VendaApi
   extend self
 
   @config = {
-              :integration_security_key => "KEY-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-              :website_authorisation_token => "TOKEN-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-              :environment => "sandbox"
+              :email => "",
+              :password => "",
+              :environment => ""
             }
 
   @valid_config_keys = @config.keys

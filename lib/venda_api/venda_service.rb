@@ -7,12 +7,10 @@ module VendaApi
       response = client.request :get_publish_info do
         soap.xml do |xml|
           xml.soapenv(:Envelope, namespaces) do |xml|
-
-            header_block(xml)
-
             xml.soapenv(:Body) do |xml|
+              header_block(xml)
               xml.urn(:GetPublishInfoRequest) do |xml|
-             end
+              end
             end
           end
         end
@@ -35,19 +33,18 @@ module VendaApi
       end
     end
 
-    def self.header_block(xml)
-      xml.soapenv(:Header) do |xml|
-        xml.urn(:Credentials) do |xml|
-          xml.integrationSecurityKey ::VendaApi.config[:integration_security_key]
-          xml.websiteAuthorisationToken ::VendaApi.config[:website_authorisation_token]
-        end
-      end
+    def self.security_block(xml)
+      xml.email ::VendaApi.config[:email]
+      xml.password ::VendaApi.config[:password]
     end
 
     def self.namespaces
       {
-        "xmlns:soapenv" => "http://schemas.xmlsoap.org/soap/envelope/",
-        "xmlns:urn" => "urn:venda:api:VendaAPI"
+        "xmlns:soap" => "http://schemas.xmlsoap.org/soap/envelope/",
+        "xmlns:soapenc" => "http://schemas.xmlsoap.org/soap/encoding/",
+        "xmlns:types" => "urn:VendaProducts/encodedTypes",
+        "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance",
+        "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema"
       }
     end
   end

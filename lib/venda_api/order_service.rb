@@ -9,9 +9,8 @@ module VendaApi
         soap.xml do |xml|
           xml.soapenv(:Envelope, namespaces) do |xml|
 
-            header_block(xml)
-
             xml.soapenv(:Body) do |xml|
+                          header_block(xml)
               xml.urn(:FindUpdatedOrdersRequest) do |xml|
                 xml.updatedFrom updated_from.strftime('%FT%T.000')
                 xml.updatedTo updated_to.strftime('%FT%T.000') if updated_to

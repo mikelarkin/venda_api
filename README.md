@@ -12,21 +12,19 @@ Configuration
 
 ```yaml
 environment: "sandbox"
-integration_security_key: "KEY-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-website_authorisation_token: "TOKEN-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+email: "john.doe@venda.com"
+password: "password123"
 ```
 
-Then
+### Configuration
 
 ```ruby
 VendaApi.configure_with("path/to/yaml/file")
 ```
 
-### Ruby example
-
 ```ruby
-VendaApi.configure(:environment => "sandbox", :integration_security_key => "KEY-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
- :website_authorisation_token => "TOKEN-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX")
+VendaApi.configure(:environment => "sandbox", :email => "john.doe@venda.com",
+ :password => "password123")
 ```
 
 Usage
