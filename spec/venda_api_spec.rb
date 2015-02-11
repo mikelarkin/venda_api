@@ -1,5 +1,8 @@
 require 'spec_helper'
 
+# require the helper module
+require "savon/mock/spec_helper"
+
 describe VendaApi do
 
   describe "Configuration" do
@@ -16,13 +19,15 @@ describe VendaApi do
 
   describe "VendaService" do
 
+    #
+
     it "should return the correct namespaces" do
       expect(VendaApi::VendaService.namespaces).to eq(    {
-        "xmlns:soap" => "http://schemas.xmlsoap.org/soap/envelope/",
-        "xmlns:soapenc" => "http://schemas.xmlsoap.org/soap/encoding/",
-        "xmlns:types" => "urn:VendaProducts/encodedTypes",
-        "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance",
-        "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema"
+                                                            "xmlns:soap" => "http://schemas.xmlsoap.org/soap/envelope/",
+                                                            "xmlns:soapenc" => "http://schemas.xmlsoap.org/soap/encoding/",
+                                                            "xmlns:types" => "urn:VendaProducts/encodedTypes",
+                                                            "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance",
+                                                            "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema"
       })
     end
   end
@@ -31,7 +36,5 @@ describe VendaApi do
 
   end
 
-  describe "OrderService" do
-
-  end
+ 
 end

@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:VendaOrders" targetNamespace="urn:VendaOrders" name="VendaOrders">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:VendaOrders">
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="ArrayOforderElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:orderElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfshipOrderElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:shipOrderElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfdespatchOrderElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:despatchOrderElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfdespatchOrderItemElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:despatchOrderItemElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfupdateOrderElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:updateOrderElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfpackageElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:packageElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOforderItemElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:orderItemElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfqueryElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:queryElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfresponseElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:responseElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfshipOrderItemElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:shipOrderItemElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfupdateOrderItemElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:updateOrderItemElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfsearchOrderElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:searchOrderElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOforderCommentElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:orderCommentElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfItemRefElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:itemRefElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfmodifyOrderExtendedFieldElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:modifyOrderExtendedFieldElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfmodifyOrderItemExtendedFieldElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:modifyOrderItemExtendedFieldElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfextendedFieldElement">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:extendedFieldElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <xsd:complexType name="messageHeaderElement">
+        <xsd:all>
+          <xsd:element name="senderId" type="xsd:string"/>
+          <xsd:element name="receiverId" type="xsd:string"/>
+          <xsd:element name="messageId" type="xsd:string"/>
+          <xsd:element name="transactionId" type="xsd:string"/>
+          <xsd:element name="transactionTimeStamp" type="xsd:dateTime"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="orderElement">
+        <xsd:all>
+          <xsd:element name="orderReference" type="xsd:int"/>
+          <xsd:element name="orderBsref" type="xsd:string"/>
+          <xsd:element name="orderNumber" type="xsd:int"/>
+          <xsd:element name="orderUserNumber" type="xsd:int"/>
+          <xsd:element name="orderUserEmail" type="xsd:string"/>
+          <xsd:element name="orderStatus" type="xsd:int"/>
+          <xsd:element name="orderDate" type="xsd:dateTime"/>
+          <xsd:element name="orderSubTotal" type="xsd:double"/>
+          <xsd:element name="orderTaxTotal" type="xsd:double"/>
+          <xsd:element name="orderIncludedTaxTotal" type="xsd:double"/>
+          <xsd:element name="orderShippingTotal" type="xsd:double"/>
+          <xsd:element name="orderAdminCharge" type="xsd:double"/>
+          <xsd:element name="orderDiscountTotal" type="xsd:double"/>
+          <xsd:element name="orderCouponDiscount" type="xsd:double"/>
+          <xsd:element name="orderGiftWrapTotal" type="xsd:double"/>
+          <xsd:element name="orderTotal" type="xsd:double"/>
+          <xsd:element name="orderBalance" type="xsd:double"/>
+          <xsd:element name="orderOverPaidTotal" type="xsd:double"/>
+          <xsd:element name="orderTest" type="xsd:boolean"/>
+          <xsd:element name="orderCouponNumber" type="xsd:int"/>
+          <xsd:element name="orderPaymentType" type="xsd:int"/>
+          <xsd:element name="orderPaymentStatus" type="xsd:int"/>
+          <xsd:element name="orderComment" type="tns:ArrayOforderCommentElement"/>
+          <xsd:element name="orderDeliveryDate" type="xsd:dateTime"/>
+          <xsd:element name="orderName" type="xsd:string"/>
+          <xsd:element name="orderAddress" type="tns:orderAddress"/>
+          <xsd:element name="orderType" type="xsd:int"/>
+          <xsd:element name="orderReplacementOrder" type="xsd:int"/>
+          <xsd:element name="orderCurrency" type="xsd:string"/>
+          <xsd:element name="orderPackages" type="tns:ArrayOfpackageElement"/>
+          <xsd:element name="orderExtendedFields" type="tns:ArrayOfextendedFieldElement" minOccurs="0"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="packageElement">
+        <xsd:all>
+          <xsd:element name="packageIndex" type="xsd:int"/>
+          <xsd:element name="packageWarehouse" type="xsd:string"/>
+          <xsd:element name="packageWeight" type="xsd:double"/>
+          <xsd:element name="packageShippingMethod" type="xsd:string"/>
+          <xsd:element name="packageCarrierMethod" type="xsd:string"/>
+          <xsd:element name="packageCarrier" type="xsd:string"/>
+          <xsd:element name="packageRequiresShipping" type="xsd:boolean"/>
+          <xsd:element name="packageStatus" type="xsd:int"/>
+          <xsd:element name="packagePaymentStatus" type="xsd:int"/>
+          <xsd:element name="packageGiftWrapTotal" type="xsd:double"/>
+          <xsd:element name="packageTotal" type="xsd:double"/>
+          <xsd:element name="packagePaidAmount" type="xsd:double"/>
+          <xsd:element name="packageAddress" type="tns:orderAddress"/>
+          <xsd:element name="packageItems" type="tns:ArrayOforderItemElement"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="orderItemElement">
+        <xsd:all>
+          <xsd:element name="itemSku" type="xsd:string"/>
+          <xsd:element name="itemQuantity" type="xsd:int"/>
+          <xsd:element name="itemName" type="xsd:string"/>
+          <xsd:element name="itemType" type="xsd:int"/>
+          <xsd:element name="itemIvtype" type="xsd:string"/>
+          <xsd:element name="itemReleaseDate" type="xsd:dateTime"/>
+          <xsd:element name="itemWarehouseSku" type="xsd:string"/>
+          <xsd:element name="itemSupplierSku" type="xsd:string"/>
+          <xsd:element name="itemSupplier" type="xsd:string"/>
+          <xsd:element name="itemRefElements" type="tns:ArrayOfItemRefElement"/>
+          <xsd:element name="orderItemExtendedFields" type="tns:ArrayOfextendedFieldElement"/>
+          <xsd:element name="itemAttributeValue1" type="xsd:string"/>
+          <xsd:element name="itemAttributeValue2" type="xsd:string"/>
+          <xsd:element name="itemAttributeValue3" type="xsd:string"/>
+          <xsd:element name="itemAttributeValue4" type="xsd:string"/>
+          <xsd:element name="itemGiftWrap" type="xsd:string"/>
+          <xsd:element name="itemPricePerUnit" type="xsd:double"/>
+          <xsd:element name="itemWasPricePerUnit" type="xsd:double"/>
+          <xsd:element name="itemPriceTotal" type="xsd:double"/>
+          <xsd:element name="itemCost" type="xsd:double"/>
+          <xsd:element name="itemTax" type="xsd:double"/>
+          <xsd:element name="itemTaxIncluded" type="xsd:double"/>
+          <xsd:element name="itemDiscount" type="xsd:double"/>
+          <xsd:element name="itemCouponNumber" type="xsd:int"/>
+          <xsd:element name="itemCouponDiscount" type="xsd:double"/>
+          <xsd:element name="itemShipping" type="xsd:double"/>
+          <xsd:element name="itemGiftWrapPrice" type="xsd:double"/>
+          <xsd:element name="itemDdpStore" type="xsd:double"/>
+          <xsd:element name="itemWeight" type="xsd:double"/>
+          <xsd:element name="itemWeightUnits" type="xsd:string"/>
+          <xsd:element name="itemComment" type="xsd:string"/>
+          <xsd:element name="itemBillingFrequency" type="xsd:string"/>
+          <xsd:element name="itemTaxExempt" type="xsd:boolean"/>
+          <xsd:element name="itemReady" type="xsd:boolean"/>
+          <xsd:element name="itemBackordered" type="xsd:boolean"/>
+          <xsd:element name="itemShipped" type="xsd:boolean"/>
+          <xsd:element name="itemCancelled" type="xsd:boolean"/>
+          <xsd:element name="itemReturned" type="xsd:boolean"/>
+          <xsd:element name="itemRmaIssued" type="xsd:boolean"/>
+          <xsd:element name="itemManuallyAdded" type="xsd:boolean"/>
+          <xsd:element name="itemWasOnBackorder" type="xsd:boolean"/>
+          <xsd:element name="itemShippedDate" type="xsd:dateTime"/>
+          <xsd:element name="itemBackorderedDate" type="xsd:dateTime"/>
+          <xsd:element name="itemCancelledDate" type="xsd:dateTime"/>
+          <xsd:element name="itemReturnedDate" type="xsd:dateTime"/>
+          <xsd:element name="itemTrackingNumber" type="xsd:string"/>
+          <xsd:element name="itemCarrier" type="xsd:string"/>
+          <xsd:element name="itemCarrierServiceCode" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="orderAddress">
+        <xsd:all>
+          <xsd:element name="addressReference" type="xsd:int"/>
+          <xsd:element name="firstName" type="xsd:string"/>
+          <xsd:element name="middleName" type="xsd:string"/>
+          <xsd:element name="lastName" type="xsd:string"/>
+          <xsd:element name="title" type="xsd:string"/>
+          <xsd:element name="phoneArea" type="xsd:string"/>
+          <xsd:element name="phoneNumber" type="xsd:string"/>
+          <xsd:element name="faxArea" type="xsd:string"/>
+          <xsd:element name="faxNumber" type="xsd:string"/>
+          <xsd:element name="company" type="xsd:string"/>
+          <xsd:element name="houseNumber" type="xsd:string"/>
+          <xsd:element name="addressLine1" type="xsd:string"/>
+          <xsd:element name="addressLine2" type="xsd:string"/>
+          <xsd:element name="city" type="xsd:string"/>
+          <xsd:element name="county" type="xsd:string"/>
+          <xsd:element name="postalCode" type="xsd:string"/>
+          <xsd:element name="country" type="xsd:string"/>
+          <xsd:element name="countryISO" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="orderCommentElement">
+        <xsd:all>
+          <xsd:element name="commentText" type="xsd:string"/>
+          <xsd:element name="commentDate" type="xsd:dateTime"/>
+          <xsd:element name="commentUser" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="itemRefElement">
+        <xsd:all>
+          <xsd:element name="itemRef" type="xsd:int"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="queryElement">
+        <xsd:all>
+          <xsd:element name="orderReference" type="xsd:int"/>
+          <xsd:element name="orderNumber" type="xsd:int"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="shipOrderElement">
+        <xsd:all>
+          <xsd:element name="orderReference" type="xsd:int"/>
+          <xsd:element name="orderNumber" type="xsd:int"/>
+          <xsd:element name="shipOrderItemElements" type="tns:ArrayOfshipOrderItemElement"/>
+          <xsd:element name="warehouse" type="xsd:string"/>
+          <xsd:element name="trackingNumber" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="shipOrderItemElement">
+        <xsd:all>
+          <xsd:element name="sku" type="xsd:string"/>
+          <xsd:element name="trackingNumber" type="xsd:string"/>
+          <xsd:element name="quantity" type="xsd:int"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="despatchOrderElement">
+        <xsd:all>
+          <xsd:element name="orderReference" type="xsd:int"/>
+          <xsd:element name="orderNumber" type="xsd:int"/>
+          <xsd:element name="warehouse" type="xsd:string"/>
+          <xsd:element name="trackingNumber" type="xsd:string"/>
+          <xsd:element name="despatchOrderItemElements" type="tns:ArrayOfdespatchOrderItemElement"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="despatchOrderItemElement">
+        <xsd:all>
+          <xsd:element name="itemSku" type="xsd:string"/>
+          <xsd:element name="itemTrackingNumber" type="xsd:string"/>
+          <xsd:element name="itemQuantity" type="xsd:int"/>
+          <xsd:element name="itemAddressReference" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="updateOrderElement">
+        <xsd:all>
+          <xsd:element name="orderReference" type="xsd:int"/>
+          <xsd:element name="orderNumber" type="xsd:int"/>
+          <xsd:element name="orderItemElements" type="tns:ArrayOfupdateOrderItemElement"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="updateOrderItemElement">
+        <xsd:all>
+          <xsd:element name="itemSku" type="xsd:string"/>
+          <xsd:element name="itemQuantity" type="xsd:int"/>
+          <xsd:element name="itemStatus" type="xsd:string"/>
+          <xsd:element name="itemEstimatedDespatchDate" type="xsd:dateTime"/>
+          <xsd:element name="itemTrackingNumber" type="xsd:string"/>
+          <xsd:element name="itemCarrierReference" type="xsd:string"/>
+          <xsd:element name="itemAddressReference" type="xsd:string"/>
+          <xsd:element name="itemReasonForReturn" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="searchOrderElement">
+        <xsd:all>
+          <xsd:element name="orderNumber" type="xsd:int"/>
+          <xsd:element name="poNumber" type="xsd:int"/>
+          <xsd:element name="comment" type="xsd:string"/>
+          <xsd:element name="userEmail" type="xsd:string"/>
+          <xsd:element name="containingSku" type="xsd:string"/>
+          <xsd:element name="beginDate" type="xsd:dateTime"/>
+          <xsd:element name="endDate" type="xsd:dateTime"/>
+          <xsd:element name="beginRange" type="xsd:int"/>
+          <xsd:element name="endRange" type="xsd:int"/>
+          <xsd:element name="status" type="xsd:int"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="modifyOrderExtendedFieldElement">
+        <xsd:all>
+          <xsd:element name="orderReference" type="xsd:int"/>
+          <xsd:element name="orderNumber" type="xsd:int"/>
+          <xsd:element name="orderExtendedFieldElements" type="tns:ArrayOfextendedFieldElement"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="modifyOrderItemExtendedFieldElement">
+        <xsd:all>
+          <xsd:element name="orderReference" type="xsd:int"/>
+          <xsd:element name="itemRef" type="xsd:int"/>
+          <xsd:element name="orderItemExtendedFieldElements" type="tns:ArrayOfextendedFieldElement"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="extendedFieldElement">
+        <xsd:all>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="value" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="responseElement">
+        <xsd:all>
+          <xsd:element name="orderReference" type="xsd:int"/>
+          <xsd:element name="orderNumber" type="xsd:int"/>
+          <xsd:element name="responseCode" type="xsd:int"/>
+          <xsd:element name="errorDescription" type="xsd:string"/>
+        </xsd:all>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <!-- messages, i.e. the elements building requests and responses -->
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaShipOrder">
+    <part name="email" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+    <part name="messageHeader" type="tns:messageHeaderElement"/>
+    <part name="orderElements" type="tns:ArrayOfshipOrderElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaShipOrderResponse">
+    <part name="responseElements" type="tns:ArrayOfresponseElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="DespatchOrder">
+    <part name="email" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+    <part name="messageHeader" type="tns:messageHeaderElement"/>
+    <part name="orderElements" type="tns:ArrayOfdespatchOrderElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="DespatchOrderResponse">
+    <part name="responseElements" type="tns:ArrayOfresponseElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaUpdateOrder">
+    <part name="email" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+    <part name="messageHeader" type="tns:messageHeaderElement"/>
+    <part name="orderElements" type="tns:ArrayOfupdateOrderElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaUpdateOrderResponse">
+    <part name="responseElements" type="tns:ArrayOfresponseElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaRetrieveOrder">
+    <part name="email" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+    <part name="messageHeader" type="tns:messageHeaderElement"/>
+    <part name="orderElements" type="tns:ArrayOfqueryElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaRetrieveOrderResponse">
+    <part name="responseElements" type="tns:ArrayOforderElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaSearchOrder">
+    <part name="email" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+    <part name="messageHeader" type="tns:messageHeaderElement"/>
+    <part name="orderElements" type="tns:ArrayOfsearchOrderElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaSearchOrderResponse">
+    <part name="responseElements" type="tns:ArrayOfresponseElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaModifyOrderExtendedFields">
+    <part name="email" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+    <part name="messageHeader" type="tns:messageHeaderElement"/>
+    <part name="orderElements" type="tns:ArrayOfmodifyOrderExtendedFieldElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaModifyOrderExtendedFieldsResponse">
+    <part name="responseElements" type="tns:ArrayOfresponseElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaModifyOrderItemExtendedFields">
+    <part name="email" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+    <part name="messageHeader" type="tns:messageHeaderElement"/>
+    <part name="orderElements" type="tns:ArrayOfmodifyOrderItemExtendedFieldElement"/>
+  </message>
+  <message xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaModifyOrderItemExtendedFieldsResponse">
+    <part name="responseElements" type="tns:ArrayOfresponseElement"/>
+  </message>
+  <!-- operations -->
+  <!-- these are documented in bindings, below -->
+  <portType xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaOrdersPort">
+    <operation name="VendaShipOrder">
+      <input message="tns:VendaShipOrder"/>
+      <output message="tns:VendaShipOrderResponse"/>
+    </operation>
+    <operation name="DespatchOrder">
+      <input message="tns:DespatchOrder"/>
+      <output message="tns:DespatchOrderResponse"/>
+    </operation>
+    <operation name="VendaUpdateOrder">
+      <input message="tns:VendaUpdateOrder"/>
+      <output message="tns:VendaUpdateOrderResponse"/>
+    </operation>
+    <operation name="VendaRetrieveOrder">
+      <input message="tns:VendaRetrieveOrder"/>
+      <output message="tns:VendaRetrieveOrderResponse"/>
+    </operation>
+    <operation name="VendaSearchOrder">
+      <input message="tns:VendaSearchOrder"/>
+      <output message="tns:VendaSearchOrderResponse"/>
+    </operation>
+    <operation name="VendaModifyOrderExtendedFields">
+      <input message="tns:VendaModifyOrderExtendedFields"/>
+      <output message="tns:VendaModifyOrderExtendedFieldsResponse"/>
+    </operation>
+    <operation name="VendaModifyOrderItemExtendedFields">
+      <input message="tns:VendaModifyOrderItemExtendedFields"/>
+      <output message="tns:VendaModifyOrderItemExtendedFieldsResponse"/>
+    </operation>
+  </portType>
+  <!-- bindings, operations -->
+  <binding xmlns="http://schemas.xmlsoap.org/wsdl/" name="VendaOrdersBinding" type="tns:VendaOrdersPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="VendaShipOrder">
+      <soap:operation soapAction="urn:VendaOrders#VendaShipOrder"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="VendaUpdateOrder">
+      <soap:operation soapAction="urn:VendaOrders#VendaUpdateOrder"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="VendaRetrieveOrder">
+      <soap:operation soapAction="urn:VendaOrders#VendaRetrieveOrder"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="VendaSearchOrder">
+      <soap:operation soapAction="urn:VendaOrders#VendaSearchOrder"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="VendaModifyOrderExtendedFields">
+      <soap:operation soapAction="urn:VendaOrders#VendaModifyOrderExtendedFields"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="VendaModifyOrderItemExtendedFields">
+      <soap:operation soapAction="urn:VendaOrders#VendaModifyOrderItemExtendedFields"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="DespatchOrder">
+      <soap:operation soapAction="urn:VendaOrders#DespatchOrder"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:VendaOrders" use="encoded"/>
+      </output>
+    </operation>
+  </binding>
+
+
+  <wsdl:service name="VendaOrders">
+    <wsdl:port binding="tns:VendaOrdersBinding" name="VendaOrdersPort">
+      <soap:address location="https://bbcshop.uat.venda.com/soap/rpcenc/1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,16 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:VendaProducts" xmlns:types="urn:VendaProducts/encodedTypes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <tns:VendaSearchOrder xmlns:tns="urn:VendaOrders">
+            <email xsi:type="xsd:string">test@venda.com</email>
+            <password xsi:type="xsd:string">password123</password>
+            <orderElements href="#id1"/>
+        </tns:VendaSearchOrder>
+        <soapenc:Array id="id1" soapenc:arrayType="tns:searchOrderElement[1]">
+            <Item href="#date"/>
+        </soapenc:Array>
+        <tns:searchOrderElement id="date" xsi:type="tns:searchOrderElement">
+            <beginDate xsi:type="xsd:dateTime">2010-05-18T00:00:00</beginDate>
+            <endDate xsi:type="xsd:dateTime">2010-05-18T00:00:00</endDate>
+        </tns:searchOrderElement>
+    </soap:Body>
+</soap:Envelope>

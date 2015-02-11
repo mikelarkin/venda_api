@@ -1,54 +1,23 @@
 module VendaApi
   class OrderService < VendaService
 
-    def self.find_updated_orders(updated_from, updated_to = nil)
+    def self.find_orders_by_date(start_date, end_date = nil)
 
-      client = Savon.client wsdl
+      client = Savon.client(wsdl: wsdl, ssl_verify_mode: ssl_mode)
+      response = client.call :venda_search_order, message: search_order_by_date_xml(start_date, end_date)
 
-      response = client.request :get_updated_orders do
-        soap.xml do |xml|
-          xml.soapenv(:Envelope, namespaces) do |xml|
-
-            xml.soapenv(:Body) do |xml|
-                          header_block(xml)
-              xml.urn(:FindUpdatedOrdersRequest) do |xml|
-                xml.updatedFrom updated_from.strftime('%FT%T.000')
-                xml.updatedTo updated_to.strftime('%FT%T.000') if updated_to
-              end
-            end
-          end
-        end
-      end
-
-      [response.to_array(:find_updated_orders_response).first[:orders]].flatten.compact
+      # return an array of order elements
+      response.body[:venda_search_order_response][:response_elements][:response_element].flatten.compact
 
     end
 
     def self.get_order_details(order_number)
 
-      client = Savon.client wsdl
+      client = Savon.client(wsdl: wsdl, ssl_verify_mode: ssl_mode)
+      response = client.call :venda_retrieve_order, message: retrieve_order_xml(order_number)
 
-      begin
-        response = client.request :get_order_details do
-          soap.xml do |xml|
-            xml.soapenv(:Envelope, namespaces) do |xml|
-
-              header_block(xml)
-
-              xml.soapenv(:Body) do |xml|
-                xml.urn(:GetOrderDetailsRequest) do |xml|
-                  xml.orderNumber order_number
-                end
-              end
-            end
-          end
-        end
-      rescue Savon::SOAP::Fault => e
-        return nil if e.message.include?("Order not found")
-        raise e.message
-      end
-
-      response.to_array(:get_order_details_response).first
+      # return order details
+      response.body[:venda_retrieve_order_response][:response_elements][:response_element]
 
     end
 
@@ -58,19 +27,81 @@ module VendaApi
       orders = []
 
       # Grab the list of orders and extract the order numbers
-      order_ids = OrderService.find_updated_orders(start_date, end_date).map { |order| order[:order_number] }
+      order_numbers = OrderService.find_orders_by_date(start_date, end_date).map { |order| order[:order_number] }
 
-      order_ids.each do |order_id|
-        orders << OrderService.get_order_details(order_id)
+      order_numbers.each do |order_number|
+        orders << OrderService.get_order_details(order_number)
       end
 
       return orders.flatten.compact
     end
 
-    private
+    def self.search_order_by_date_xml(updated_from, updated_to=nil)
+
+      namespaces = {
+        "xmlns:soap" => "http://schemas.xmlsoap.org/soap/envelope/",
+        "xmlns:soapenc" => "http://schemas.xmlsoap.org/soap/encoding/",
+        "xmlns:tns" => "urn:VendaProducts",
+        "xmlns:types" => "urn:VendaProducts/encodedTypes",
+        "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance",
+        "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema"
+      }
+
+      builder = Builder::XmlMarkup.new
+      # builder.instruct!(:xml, :version => "1.0")
+
+      builder.soap(:Envelope, namespaces) do |xml|
+
+        xml.soap(:Body, "soap:encodingStyle"=>"http://schemas.xmlsoap.org/soap/encoding/") do |xml|
+
+          xml.tns(:VendaSearchOrder, "xmlns:tns"=>"urn:VendaOrders") do |xml|
+            security_block(xml)
+            xml.orderElements({"href" => "#id1"})
+          end
+
+          xml.soapenc(:Array, {"id" => "id1", "soapenc:arrayType" => "tns:searchOrderElement[1]"}) do |xml|
+            xml.Item("href" => "#date")
+          end
+
+          xml.tns(:searchOrderElement, {"id" => "date", "xsi:type" => "tns:searchOrderElement"}) do |xml|
+            xml.beginDate updated_from.strftime('%FT%T'), "xsi:type" => "xsd:dateTime"
+            xml.endDate updated_to.strftime('%FT%T'), "xsi:type" => "xsd:dateTime" if updated_to
+          end
+
+        end
+      end
+    end
+
+    def self.retrieve_order_xml(order_number)
+
+      namespaces = {
+        "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance",
+        "xmlns:soapenc" => "http://schemas.xmlsoap.org/soap/encoding/",
+        "xmlns:soap" => "http://schemas.xmlsoap.org/soap/envelope/",
+        "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema",
+        "soap:encodingStyle" => "http://schemas.xmlsoap.org/soap/encoding/"
+      }
+
+      builder = Builder::XmlMarkup.new
+
+      builder.soap(:Envelope, namespaces) do |xml|
+
+        xml.soap(:Body) do |xml|
+
+          xml.response(:VendaRetrieveOrder, "xmlns:response"=>"urn:VendaOrders") do |xml|
+            security_block(xml)
+            xml.orderElements( {"xsi:type" => "soapenc:Array", "soapenc:arrayType" => "response:orderElement[]"}) do |xml|
+              xml.orderElement do |xml|
+                xml.orderNumber order_number
+              end
+            end
+          end
+        end
+      end
+    end
 
     def self.wsdl
-      base_url + "OrderService?wsdl"
+      base_url + "VendaOrders.wsdl"
     end
 
   end

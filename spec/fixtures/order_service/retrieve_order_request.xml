@@ -1,0 +1,13 @@
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+    <soap:Body>
+        <response:VendaRetrieveOrder xmlns:response="urn:VendaOrders">
+            <email xsi:type="xsd:string">test@venda.com</email>
+            <password xsi:type="xsd:string">password123</password>
+            <orderElements xsi:type="soapenc:Array" soapenc:arrayType="response:orderElement[]">
+                <orderElement>
+                    <orderNumber>596382</orderNumber>
+                </orderElement>
+            </orderElements>
+        </response:VendaRetrieveOrder>
+    </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <soap:Body>
+    <response:VendaRetrieveOrderResponse xmlns:response="urn:VendaOrders">
+      <response:responseElements xmlns:response="urn:VendaOrders" xsi:type="soapenc:Array" soapenc:arrayType="response:orderElement[1]">
+        <response:responseElement xsi:type="response:orderElement">
+          <orderReference xsi:type="xsd:int">10063</orderReference>
+          <orderBsref xsi:type="xsd:string">shoeshop</orderBsref>
+          <orderNumber xsi:type="xsd:int">596382</orderNumber>
+          <orderUserNumber xsi:type="xsd:int">101</orderUserNumber>
+          <orderUserEmail xsi:type="xsd:string">user@email.com</orderUserEmail>
+          <orderStatus xsi:type="xsd:int">5</orderStatus>
+          <orderDate xsi:type="xsd:dateTime">2007-09-03T09:34:56</orderDate>
+          <orderSubTotal xsi:type="xsd:double">169.97</orderSubTotal>
+          <orderTaxTotal xsi:type="xsd:double">0.00</orderTaxTotal>
+          <orderIncludedTaxTotal xsi:type="xsd:double">25.31</orderIncludedTaxTotal>
+          <orderShippingTotal xsi:type="xsd:double">0.00</orderShippingTotal>
+          <orderAdminCharge xsi:type="xsd:double">0.00</orderAdminCharge>
+          <orderDiscountTotal xsi:type="xsd:double">0.00</orderDiscountTotal>
+          <orderCouponDiscount xsi:type="xsd:double">0.00</orderCouponDiscount>
+          <orderGiftWrapTotal xsi:type="xsd:double">0.00</orderGiftWrapTotal>
+          <orderTotal xsi:type="xsd:double">169.97</orderTotal>
+          <orderBalance xsi:type="xsd:double">0.00</orderBalance>
+          <orderOverPaidTotal xsi:type="xsd:double">0</orderOverPaidTotal>
+          <orderTest xsi:type="xsd:boolean">true</orderTest>
+          <orderCouponNumber xsi:type="xsd:int">0</orderCouponNumber>
+          <orderPaymentType xsi:type="xsd:int">0</orderPaymentType>
+          <orderPaymentStatus xsi:type="xsd:int">30</orderPaymentStatus>
+          <orderComment>
+            <soapenc:Array xsi:type="soapenc:Array" soapenc:arrayType="response:orderCommentElement[41]">
+              <orderCommentElement xsi:type="response:orderCommentElement">
+                <commentText xsi:type="xsd:string">Carrier has been manually changed from &amp;quot;none&amp;quot; to &amp;quot;10&amp;quot;</commentText>
+                <commentDate xsi:type="xsd:dateTime">2007-09-03T09:36:58</commentDate>
+                <commentUser xsi:type="xsd:string">user@venda.com</commentUser>
+              </orderCommentElement>
+              <orderCommentElement xsi:type="response:orderCommentElement">
+                <commentText xsi:type="xsd:string">Order placed by  Venda Administrator</commentText>
+                <commentDate xsi:type="xsd:dateTime">2007-09-03T09:35:04</commentDate>
+                <commentUser xsi:type="xsd:string">user@venda.com</commentUser>
+              </orderCommentElement>
+              <orderCommentElement xsi:type="response:orderCommentElement">
+                <commentText xsi:type="xsd:string">Order placed on hold due card verification check failure</commentText>
+                <commentDate xsi:type="xsd:dateTime">2007-09-03T09:34:52</commentDate>
+                <commentUser xsi:type="xsd:string">user@venda.com</commentUser>
+              </orderCommentElement>
+            </soapenc:Array>
+          </orderComment>
+          <orderDeliveryDate xsi:type="xsd:dateTime">2007-09-03T00:00:00</orderDeliveryDate>
+          <orderName xsi:type="xsd:string" />
+          <orderAddress xsi:type="response:orderAddress">
+            <addressReference xsi:type="xsd:int">86</addressReference>
+            <firstName xsi:type="xsd:string">antonio</firstName>
+            <middleName xsi:type="xsd:string" />
+            <lastName xsi:type="xsd:string">barone</lastName>
+            <title xsi:type="xsd:string" />
+            <phoneArea xsi:type="xsd:string" />
+            <phoneNumber xsi:type="xsd:string" />
+            <faxArea xsi:type="xsd:string" />
+            <faxNumber xsi:type="xsd:string" />
+            <company xsi:type="xsd:string" />
+            <houseNumber xsi:type="xsd:string" />
+            <addressLine1 xsi:type="xsd:string">Xxxxx xxx road</addressLine1>
+            <addressLine2 xsi:type="xsd:string" />
+            <city xsi:type="xsd:string">Xxxxx city</city>
+            <county xsi:type="xsd:string" />
+            <postalCode xsi:type="xsd:string">XXXX XXX</postalCode>
+            <country xsi:type="xsd:string">United Kingdom</country>
+            <countryISO xsi:type="xsd:string">UK</countryISO>
+          </orderAddress>
+          <orderType xsi:type="xsd:int">2</orderType>
+          <orderReplacementOrder xsi:type="xsd:int">0</orderReplacementOrder>
+          <orderCurrency xsi:type="xsd:string">GBP</orderCurrency>
+          <orderPackages>
+            <soapenc:Array xsi:type="soapenc:Array" soapenc:arrayType="response:packageElement[2]">
+              <packageElement xsi:type="response:packageElement">
+                <packageIndex xsi:type="xsd:int">0</packageIndex>
+                <packageWarehouse xsi:type="xsd:string">schuh</packageWarehouse>
+                <packageWeight xsi:type="xsd:double">0</packageWeight>
+                <packageShippingMethod xsi:type="xsd:string">standardshipping</packageShippingMethod>
+                <packageCarrierMethod xsi:nil="true" xsi:type="xsd:string" />
+                <packageCarrier xsi:type="xsd:string">10</packageCarrier>
+                <packageRequiresShipping xsi:type="xsd:boolean">true</packageRequiresShipping>
+                <packageStatus xsi:type="xsd:int">5</packageStatus>
+                <packagePaymentStatus xsi:type="xsd:int">30</packagePaymentStatus>
+                <packageGiftWrapTotal xsi:type="xsd:double">0</packageGiftWrapTotal>
+                <packageTotal xsi:type="xsd:double">109.98</packageTotal>
+                <packagePaidAmount xsi:type="xsd:double">0</packagePaidAmount>
+                <packageAddress xsi:type="response:orderAddress">
+                  <addressReference xsi:type="xsd:int">85</addressReference>
+                  <firstName xsi:type="xsd:string">antonio</firstName>
+                  <middleName xsi:type="xsd:string" />
+                  <lastName xsi:type="xsd:string">barone</lastName>
+                  <title xsi:type="xsd:string" />
+                  <phoneArea xsi:type="xsd:string" />
+                  <phoneNumber xsi:type="xsd:string" />
+                  <faxArea xsi:type="xsd:string" />
+                  <faxNumber xsi:type="xsd:string" />
+                  <company xsi:type="xsd:string" />
+                  <houseNumber xsi:type="xsd:string" />
+                  <addressLine1 xsi:type="xsd:string">Xxxxx xxx road</addressLine1>
+                  <addressLine2 xsi:type="xsd:string" />
+                  <city xsi:type="xsd:string">london</city>
+                  <county xsi:type="xsd:string" />
+                  <postalCode xsi:type="xsd:string">XXXX XXX</postalCode>
+                  <country xsi:type="xsd:string">United Kingdom</country>
+                  <countryISO xsi:type="xsd:string">UK</countryISO>
+                </packageAddress>
+                <packageItems>
+                  <soapenc:Array xsi:type="soapenc:Array" soapenc:arrayType="response:orderItemElement[2]">
+                    <orderItemElement xsi:type="response:orderItemElement">
+                      <itemSku xsi:type="xsd:string">sch342565s3</itemSku>
+                      <itemQuantity xsi:type="xsd:int">1</itemQuantity>
+                      <itemName xsi:type="xsd:string">340 565</itemName>
+                      <itemType xsi:type="xsd:int">0</itemType>
+                      <itemIvtype xsi:type="xsd:string">productdetail</itemIvtype>
+                      <itemReleaseDate xsi:type="xsd:dateTime">2007-05-09T00:00:00</itemReleaseDate>
+                      <itemWarehouseSku xsi:type="xsd:string">340565722430</itemWarehouseSku>
+                      <itemSupplierSku xsi:nil="true" xsi:type="xsd:string" />
+                      <itemRefElements>
+                        <soapenc:Array xsi:type="soapenc:Array" soapenc:arrayType="response:itemRefElement[1]">
+                          <itemRefElement xsi:type="response:itemRefElement">
+                            <itemRef xsi:type="xsd:int">121</itemRef>
+                          </itemRefElement>
+                        </soapenc:Array>
+                      </itemRefElements>
+                      <itemSupplier xsi:type="xsd:string" />
+                      <itemAttributeValue1 xsi:type="xsd:string">Black and White</itemAttributeValue1>
+                      <itemAttributeValue2 xsi:type="xsd:string">Male 430 ( UK 9 )</itemAttributeValue2>
+                      <itemAttributeValue3 xsi:nil="true" xsi:type="xsd:string" />
+                      <itemAttributeValue4 xsi:nil="true" xsi:type="xsd:string" />
+                      <itemGiftWrap xsi:nil="true" xsi:type="xsd:string" />
+                      <itemPricePerUnit xsi:type="xsd:double">64.99</itemPricePerUnit>
+                      <itemWasPricePerUnit xsi:type="xsd:double">64.99</itemWasPricePerUnit>
+                      <itemPriceTotal xsi:type="xsd:double">64.99</itemPriceTotal>
+                      <itemCost xsi:type="xsd:double">29.58</itemCost>
+                      <itemTax xsi:type="xsd:double">0.00</itemTax>
+                      <itemTaxIncluded xsi:type="xsd:double">9.67</itemTaxIncluded>
+                      <itemDiscount xsi:type="xsd:double">0.00</itemDiscount>
+                      <itemCouponNumber xsi:type="xsd:int">0</itemCouponNumber>
+                      <itemCouponDiscount xsi:type="xsd:double">0.00</itemCouponDiscount>
+                      <itemShipping xsi:type="xsd:double">0</itemShipping>
+                      <itemGiftWrapPrice xsi:nil="true" xsi:type="xsd:double" />
+                      <itemDdpStore xsi:type="xsd:double">0</itemDdpStore>
+                      <itemWeight xsi:type="xsd:double">0</itemWeight>
+                      <itemWeightUnits xsi:nil="true" xsi:type="xsd:string" />
+                      <itemComment xsi:nil="true" xsi:type="xsd:string" />
+                      <itemBillingFrequency xsi:type="xsd:string" />
+                      <itemTaxExempt xsi:type="xsd:boolean">false</itemTaxExempt>
+                      <itemReady xsi:type="xsd:boolean">false</itemReady>
+                      <itemBackordered xsi:type="xsd:boolean">false</itemBackordered>
+                      <itemShipped xsi:type="xsd:boolean">true</itemShipped>
+                      <itemCancelled xsi:type="xsd:boolean">false</itemCancelled>
+                      <itemReturned xsi:type="xsd:boolean">false</itemReturned>
+                      <itemRmaIssued xsi:type="xsd:boolean">false</itemRmaIssued>
+                      <itemManuallyAdded xsi:type="xsd:boolean">false</itemManuallyAdded>
+                      <itemWasOnBackorder xsi:type="xsd:boolean">false</itemWasOnBackorder>
+                      <itemShippedDate xsi:type="xsd:dateTime">2007-09-03T09:36:58</itemShippedDate>
+                      <itemBackorderedDate xsi:type="xsd:dateTime">2007-09-07T00:00:00</itemBackorderedDate>
+                      <itemCancelledDate xsi:type="xsd:dateTime">2007-09-07T00:00:00</itemCancelledDate>
+                      <itemReturnedDate xsi:type="xsd:dateTime">2007-09-07T00:00:00</itemReturnedDate>
+                      <itemTrackingNumber xsi:type="xsd:string" />
+                      <itemCarrier xsi:type="xsd:string">10</itemCarrier>
+                      <itemCarrierServiceCode xsi:type="xsd:string" />
+                      <itemTaxDetails />
+                    </orderItemElement>
+                    <orderItemElement xsi:type="response:orderItemElement">
+                      <itemSku xsi:type="xsd:string">sch310330s6</itemSku>
+                      <itemQuantity xsi:type="xsd:int">1</itemQuantity>
+                      <itemName xsi:type="xsd:string">310 330</itemName>
+                      <itemType xsi:type="xsd:int">0</itemType>
+                      <itemIvtype xsi:type="xsd:string">productdetail</itemIvtype>
+                      <itemReleaseDate xsi:type="xsd:dateTime">2007-07-16T00:00:00</itemReleaseDate>
+                      <itemWarehouseSku xsi:type="xsd:string">310330702410</itemWarehouseSku>
+                      <itemSupplierSku xsi:nil="true" xsi:type="xsd:string" />
+                      <itemRefElements>
+                        <soapenc:Array xsi:type="soapenc:Array" soapenc:arrayType="response:itemRefElement[1]">
+                          <itemRefElement xsi:type="response:itemRefElement">
+                            <itemRef xsi:type="xsd:int">123</itemRef>
+                          </itemRefElement>
+                        </soapenc:Array>
+                      </itemRefElements>
+                      <itemSupplier xsi:type="xsd:string" />
+                      <itemAttributeValue1 xsi:type="xsd:string">Black</itemAttributeValue1>
+                      <itemAttributeValue2 xsi:type="xsd:string">Male 410 ( UK 7 )</itemAttributeValue2>
+                      <itemAttributeValue3 xsi:nil="true" xsi:type="xsd:string" />
+                      <itemAttributeValue4 xsi:nil="true" xsi:type="xsd:string" />
+                      <itemGiftWrap xsi:nil="true" xsi:type="xsd:string" />
+                      <itemPricePerUnit xsi:type="xsd:double">44.99</itemPricePerUnit>
+                      <itemWasPricePerUnit xsi:type="xsd:double">44.99</itemWasPricePerUnit>
+                      <itemPriceTotal xsi:type="xsd:double">44.99</itemPriceTotal>
+                      <itemCost xsi:type="xsd:double">17.3</itemCost>
+                      <itemTax xsi:type="xsd:double">0.00</itemTax>
+                      <itemTaxIncluded xsi:type="xsd:double">6.70</itemTaxIncluded>
+                      <itemDiscount xsi:type="xsd:double">0.00</itemDiscount>
+                      <itemCouponNumber xsi:type="xsd:int">0</itemCouponNumber>
+                      <itemCouponDiscount xsi:type="xsd:double">0.00</itemCouponDiscount>
+                      <itemShipping xsi:type="xsd:double">0</itemShipping>
+                      <itemGiftWrapPrice xsi:nil="true" xsi:type="xsd:double" />
+                      <itemDdpStore xsi:type="xsd:double">0</itemDdpStore>
+                      <itemWeight xsi:type="xsd:double">0</itemWeight>
+                      <itemWeightUnits xsi:nil="true" xsi:type="xsd:string" />
+                      <itemComment xsi:nil="true" xsi:type="xsd:string" />
+                      <itemBillingFrequency xsi:type="xsd:string" />
+                      <itemTaxExempt xsi:type="xsd:boolean">false</itemTaxExempt>
+                      <itemReady xsi:type="xsd:boolean">false</itemReady>
+                      <itemBackordered xsi:type="xsd:boolean">false</itemBackordered>
+                      <itemShipped xsi:type="xsd:boolean">true</itemShipped>
+                      <itemCancelled xsi:type="xsd:boolean">false</itemCancelled>
+                      <itemReturned xsi:type="xsd:boolean">false</itemReturned>
+                      <itemRmaIssued xsi:type="xsd:boolean">false</itemRmaIssued>
+                      <itemManuallyAdded xsi:type="xsd:boolean">false</itemManuallyAdded>
+                      <itemWasOnBackorder xsi:type="xsd:boolean">false</itemWasOnBackorder>
+                      <itemShippedDate xsi:type="xsd:dateTime">2007-09-03T09:36:58</itemShippedDate>
+                      <itemBackorderedDate xsi:type="xsd:dateTime">2007-09-07T00:00:00</itemBackorderedDate>
+                      <itemCancelledDate xsi:type="xsd:dateTime">2007-09-07T00:00:00</itemCancelledDate>
+                      <itemReturnedDate xsi:type="xsd:dateTime">2007-09-07T00:00:00</itemReturnedDate>
+                      <itemTrackingNumber xsi:type="xsd:string" />
+                      <itemCarrier xsi:type="xsd:string">10</itemCarrier>
+                      <itemCarrierServiceCode xsi:type="xsd:string" />
+                      <itemTaxDetails />
+                    </orderItemElement>
+                  </soapenc:Array>
+                </packageItems>
+              </packageElement>
+              <packageElement xsi:type="response:packageElement">
+                <packageIndex xsi:type="xsd:int">1</packageIndex>
+                <packageWarehouse xsi:type="xsd:string">schuh</packageWarehouse>
+                <packageWeight xsi:type="xsd:double">0</packageWeight>
+                <packageShippingMethod xsi:type="xsd:string">standardshipping</packageShippingMethod>
+                <packageCarrierMethod xsi:nil="true" xsi:type="xsd:string" />
+                <packageCarrier xsi:type="xsd:string">10</packageCarrier>
+                <packageRequiresShipping xsi:type="xsd:boolean">true</packageRequiresShipping>
+                <packageStatus xsi:type="xsd:int">6</packageStatus>
+                <packagePaymentStatus xsi:type="xsd:int">30</packagePaymentStatus>
+                <packageGiftWrapTotal xsi:type="xsd:double">0</packageGiftWrapTotal>
+                <packageTotal xsi:type="xsd:double">59.99</packageTotal>
+                <packagePaidAmount xsi:type="xsd:double">0</packagePaidAmount>
+                <packageAddress xsi:type="response:orderAddress">
+                  <addressReference xsi:type="xsd:int">87</addressReference>
+                  <firstName xsi:type="xsd:string">antonio</firstName>
+                  <middleName xsi:type="xsd:string" />
+                  <lastName xsi:type="xsd:string">barone</lastName>
+                  <title xsi:type="xsd:string" />
+                  <phoneArea xsi:type="xsd:string" />
+                  <phoneNumber xsi:type="xsd:string" />
+                  <faxArea xsi:type="xsd:string" />
+                  <faxNumber xsi:type="xsd:string" />
+                  <company xsi:type="xsd:string" />
+                  <houseNumber xsi:type="xsd:string" />
+                  <addressLine1 xsi:type="xsd:string">Xxxxx xxx road</addressLine1>
+                  <addressLine2 xsi:type="xsd:string" />
+                  <city xsi:type="xsd:string">london</city>
+                  <county xsi:type="xsd:string" />
+                  <postalCode xsi:type="xsd:string">XXXX XXX</postalCode>
+                  <country xsi:type="xsd:string">United Kingdom</country>
+                  <countryISO xsi:type="xsd:string">UK</countryISO>
+                </packageAddress>
+                <packageItems>
+                  <soapenc:Array xsi:type="soapenc:Array" soapenc:arrayType="response:orderItemElement[1]">
+                    <orderItemElement xsi:type="response:orderItemElement">
+                      <itemSku xsi:type="xsd:string">sch150466s4</itemSku>
+                      <itemQuantity xsi:type="xsd:int">1</itemQuantity>
+                      <itemName xsi:type="xsd:string">150 466</itemName>
+                      <itemType xsi:type="xsd:int">0</itemType>
+                      <itemIvtype xsi:type="xsd:string">productdetail</itemIvtype>
+                      <itemReleaseDate xsi:type="xsd:dateTime">2007-04-16T00:00:00</itemReleaseDate>
+                      <itemWarehouseSku xsi:type="xsd:string">150466706400</itemWarehouseSku>
+                      <itemSupplierSku xsi:nil="true" xsi:type="xsd:string" />
+                      <itemRefElements>
+                        <soapenc:Array xsi:type="soapenc:Array" soapenc:arrayType="response:itemRefElement[1]">
+                          <itemRefElement xsi:type="response:itemRefElement">
+                            <itemRef xsi:type="xsd:int">122</itemRef>
+                          </itemRefElement>
+                        </soapenc:Array>
+                      </itemRefElements>
+                      <itemSupplier xsi:type="xsd:string" />
+                      <itemAttributeValue1 xsi:type="xsd:string">Black</itemAttributeValue1>
+                      <itemAttributeValue2 xsi:type="xsd:string">Female 400 ( UK 7 )</itemAttributeValue2>
+                      <itemAttributeValue3 xsi:nil="true" xsi:type="xsd:string" />
+                      <itemAttributeValue4 xsi:nil="true" xsi:type="xsd:string" />
+                      <itemGiftWrap xsi:nil="true" xsi:type="xsd:string" />
+                      <itemPricePerUnit xsi:type="xsd:double">59.99</itemPricePerUnit>
+                      <itemWasPricePerUnit xsi:type="xsd:double">59.99</itemWasPricePerUnit>
+                      <itemPriceTotal xsi:type="xsd:double">59.99</itemPriceTotal>
+                      <itemCost xsi:type="xsd:double">12.05</itemCost>
+                      <itemTax xsi:type="xsd:double">0.00</itemTax>
+                      <itemTaxIncluded xsi:type="xsd:double">8.93</itemTaxIncluded>
+                      <itemDiscount xsi:type="xsd:double">0.00</itemDiscount>
+                      <itemCouponNumber xsi:type="xsd:int">0</itemCouponNumber>
+                      <itemCouponDiscount xsi:type="xsd:double">0.00</itemCouponDiscount>
+                      <itemShipping xsi:type="xsd:double">0</itemShipping>
+                      <itemGiftWrapPrice xsi:nil="true" xsi:type="xsd:double" />
+                      <itemDdpStore xsi:type="xsd:double">0</itemDdpStore>
+                      <itemWeight xsi:type="xsd:double">0</itemWeight>
+                      <itemWeightUnits xsi:nil="true" xsi:type="xsd:string" />
+                      <itemComment xsi:nil="true" xsi:type="xsd:string" />
+                      <itemBillingFrequency xsi:type="xsd:string" />
+                      <itemTaxExempt xsi:type="xsd:boolean">false</itemTaxExempt>
+                      <itemReady xsi:type="xsd:boolean">false</itemReady>
+                      <itemBackordered xsi:type="xsd:boolean">false</itemBackordered>
+                      <itemShipped xsi:type="xsd:boolean">false</itemShipped>
+                      <itemCancelled xsi:type="xsd:boolean">false</itemCancelled>
+                      <itemReturned xsi:type="xsd:boolean">true</itemReturned>
+                      <itemRmaIssued xsi:type="xsd:boolean">false</itemRmaIssued>
+                      <itemManuallyAdded xsi:type="xsd:boolean">false</itemManuallyAdded>
+                      <itemWasOnBackorder xsi:type="xsd:boolean">false</itemWasOnBackorder>
+                      <itemShippedDate xsi:type="xsd:dateTime">2007-09-03T09:36:58</itemShippedDate>
+                      <itemBackorderedDate xsi:type="xsd:dateTime">2007-09-07T00:00:00</itemBackorderedDate>
+                      <itemCancelledDate xsi:type="xsd:dateTime">2007-09-07T00:00:00</itemCancelledDate>
+                      <itemReturnedDate xsi:type="xsd:dateTime">2007-09-03T09:56:57</itemReturnedDate>
+                      <itemTrackingNumber xsi:type="xsd:string" />
+                      <itemCarrier xsi:type="xsd:string">10</itemCarrier>
+                      <itemCarrierServiceCode xsi:type="xsd:string" />
+                      <itemTaxDetails />
+                    </orderItemElement>
+                  </soapenc:Array>
+                </packageItems>
+              </packageElement>
+            </soapenc:Array>
+          </orderPackages>
+          <orderTaxDetails />
+        </response:responseElement>
+      </response:responseElements>
+    </response:VendaRetrieveOrderResponse>
+  </soap:Body>
+</soap:Envelope>

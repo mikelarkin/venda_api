@@ -1,0 +1,44 @@
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <soap:Body>
+    <response:VendaSearchOrderResponse xmlns:response="urn:VendaOrders">
+      <response:responseElements xmlns:response="urn:VendaOrders" xsi:type="soapenc:Array" soapenc:arrayType="response:responseElement[34]">
+        <response:responseElement xsi:type="response:responseElement">
+          <orderReference xsi:type="xsd:int">10065</orderReference>
+          <responseCode xsi:type="xsd:int">0</responseCode>
+          <orderNumber xsi:type="xsd:int">596384</orderNumber>
+          <errorDescription xsi:type="xsd:string">Order found.</errorDescription>
+        </response:responseElement>
+        <response:responseElement xsi:type="response:responseElement">
+          <orderReference xsi:type="xsd:int">10068</orderReference>
+          <responseCode xsi:type="xsd:int">0</responseCode>
+          <orderNumber xsi:type="xsd:int">596387</orderNumber>
+          <errorDescription xsi:type="xsd:string">Order found.</errorDescription>
+        </response:responseElement>
+        <response:responseElement xsi:type="response:responseElement">
+          <orderReference xsi:type="xsd:int">10070</orderReference>
+          <responseCode xsi:type="xsd:int">0</responseCode>
+          <orderNumber xsi:type="xsd:int">596389</orderNumber>
+          <errorDescription xsi:type="xsd:string">Order found.</errorDescription>
+        </response:responseElement>
+        <response:responseElement xsi:type="response:responseElement">
+          <orderReference xsi:type="xsd:int">10094</orderReference>
+          <responseCode xsi:type="xsd:int">0</responseCode>
+          <orderNumber xsi:type="xsd:int">596410</orderNumber>
+          <errorDescription xsi:type="xsd:string">Order found.</errorDescription>
+        </response:responseElement>
+        <response:responseElement xsi:type="response:responseElement">
+          <orderReference xsi:type="xsd:int">10095</orderReference>
+          <responseCode xsi:type="xsd:int">0</responseCode>
+          <orderNumber xsi:type="xsd:int">596411</orderNumber>
+          <errorDescription xsi:type="xsd:string">Order found.</errorDescription>
+        </response:responseElement>
+        <response:responseElement xsi:type="response:responseElement">
+          <orderReference xsi:type="xsd:int">10099</orderReference>
+          <responseCode xsi:type="xsd:int">0</responseCode>
+          <orderNumber xsi:type="xsd:int">596413</orderNumber>
+          <errorDescription xsi:type="xsd:string">Order found.</errorDescription>
+        </response:responseElement>
+      </response:responseElements>
+    </response:VendaSearchOrderResponse>
+  </soap:Body>
+</soap:Envelope>

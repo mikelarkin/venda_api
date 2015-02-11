@@ -12,6 +12,7 @@ module VendaApi
   @config = {
               :email => "",
               :password => "",
+              :base_url => "",
               :environment => ""
             }
 
