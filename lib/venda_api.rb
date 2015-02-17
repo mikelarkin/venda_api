@@ -10,13 +10,18 @@ module VendaApi
   extend self
 
   @config = {
-              :email => "",
-              :password => "",
-              :base_url => "",
-              :environment => ""
-            }
+    :email => "",
+    :password => "",
+    :base_url => ""
+  }
 
   @valid_config_keys = @config.keys
+
+
+  # Clear out existing configuration
+  def self.reset
+    configure({:email => "", :password => "", :base_url => ""})
+  end
 
   def self.configure(opts = {})
     opts.each {|k,v| @config[k.to_sym] = v if @valid_config_keys.include? k.to_sym}

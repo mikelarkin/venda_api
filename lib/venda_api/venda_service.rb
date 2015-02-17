@@ -8,7 +8,7 @@ module VendaApi
     end
 
     def self.ssl_mode
-      return :none #unless ::VendaApi.config[:environment] == "test"
+      return :none
     end
 
 

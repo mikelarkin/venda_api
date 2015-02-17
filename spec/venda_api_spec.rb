@@ -5,36 +5,29 @@ require "savon/mock/spec_helper"
 
 describe VendaApi do
 
+  before do
+    VendaApi.reset
+  end
+
   describe "Configuration" do
 
     it 'should have a default empty configuration' do
-      expect(VendaApi.config).to eq({email: "", password: "", environment: ""})
+      expect(VendaApi.config).to eq({email: "", password: "", base_url: ""})
     end
 
     it 'should return the passed in values' do
-      VendaApi.configure(:environment => "sandbox", :email => "john.doe@venda.com", :password => "password123")
-      expect(VendaApi.config).to eq({email: "john.doe@venda.com", password: "password123", environment: "sandbox"})
+      VendaApi.configure(:base_url => "http://fake.com/api", :email => "john.doe@venda.com", :password => "password123")
+      expect(VendaApi.config).to eq({email: "john.doe@venda.com", password: "password123", base_url: "http://fake.com/api"})
     end
   end
 
   describe "VendaService" do
 
-    #
-
-    it "should return the correct namespaces" do
-      expect(VendaApi::VendaService.namespaces).to eq(    {
-                                                            "xmlns:soap" => "http://schemas.xmlsoap.org/soap/envelope/",
-                                                            "xmlns:soapenc" => "http://schemas.xmlsoap.org/soap/encoding/",
-                                                            "xmlns:types" => "urn:VendaProducts/encodedTypes",
-                                                            "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance",
-                                                            "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema"
-      })
-    end
   end
 
   describe "ProductService" do
 
   end
 
- 
+
 end

@@ -4,6 +4,7 @@ require 'spec_helper'
 require "savon/mock/spec_helper"
 
 describe VendaApi do
+
   describe "OrderService" do
 
     # include the helper module
@@ -12,7 +13,7 @@ describe VendaApi do
     # set Savon in and out of mock mode
     before(:all) {
       savon.mock!
-      VendaApi.configure(:email => "test@venda.com", :password => "password123", :base_url => "http://example.com", :environment => :test)
+      VendaApi.configure(:email => "test@venda.com", :password => "password123", :base_url => "http://example.com")
     }
     after(:all)  { savon.unmock! }
     let(:wsdl) { File.read("spec/fixtures/order_service/VendaOrders.wsdl")}
