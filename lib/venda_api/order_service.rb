@@ -101,7 +101,7 @@ module VendaApi
     end
 
     def self.wsdl
-      base_url + "VendaOrders.wsdl"
+      base_url + "/VendaOrders.wsdl"
     end
 
   end
