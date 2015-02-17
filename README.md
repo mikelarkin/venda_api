@@ -31,5 +31,5 @@ Usage
 -------------
 
 ```ruby
-products = VendaApi::OrderService.get_orders(Date.today - 3.days, Date.today)
+orders = VendaApi::OrderService.get_orders(Date.today - 3.days, Date.today)
 ```

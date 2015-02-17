@@ -21,13 +21,4 @@ describe VendaApi do
     end
   end
 
-  describe "VendaService" do
-
-  end
-
-  describe "ProductService" do
-
-  end
-
-
 end

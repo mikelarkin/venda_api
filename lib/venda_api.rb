@@ -2,7 +2,6 @@ require 'savon'
 require 'yaml'
 require 'venda_api/version'
 require 'venda_api/venda_service'
-require 'venda_api/product_service'
 require 'venda_api/order_service'
 
 module VendaApi
