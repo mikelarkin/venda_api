@@ -17,7 +17,7 @@ module VendaApi
       response = client.call :venda_retrieve_order, message: retrieve_order_xml(order_number)
 
       # return order details
-      response.body[:venda_retrieve_order_response][:response_elements][:response_element]
+      return response
 
     end
 
